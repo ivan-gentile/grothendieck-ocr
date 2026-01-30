@@ -54,18 +54,20 @@ grothendieck-ocr/
 
 ## Features
 
-- **Multi-model support**: Gemini 2.0 Flash, Claude Opus 4.5
+- **Multi-model support**: Gemini 3 Flash/Pro, Claude Opus 4.5
+- **Thinking mode**: Configurable reasoning depth (low/medium/high) for Gemini 3
 - **LaTeX output**: Mathematical notation preserved in LaTeX format
 - **Progress tracking**: Resume interrupted transcriptions
 - **Batch processing**: Process multiple documents efficiently
-- **Quality metrics**: Track transcription confidence and errors
+- **Rate limit handling**: Automatic retry with exponential backoff
 
 ## Cost Estimate
 
-| Model | Cost/Page | 10k Pages |
+| Model | Cost/Page | 18k Pages |
 |-------|-----------|-----------|
-| Gemini 2.0 Flash | ~$0.002 | ~$20 |
-| Claude Opus 4.5 | ~$0.03 | ~$300 |
+| Gemini 3 Flash | ~$0.01 | ~$180 |
+| Gemini 3 Pro | ~$0.03 | ~$540 |
+| Claude Opus 4.5 | ~$0.03 | ~$540 |
 
 The bottleneck is human verification, not API cost.
 
@@ -76,19 +78,20 @@ The bottleneck is human verification, not API cost.
 {
   "pdf_name": "119.pdf",
   "page_num": 1,
-  "transcription": "Soit $X$ un schéma...",
-  "model": "gemini-2.0-flash",
-  "confidence": 0.92,
-  "timestamp": "2026-01-30T12:00:00Z"
+  "transcription": "Soit $\\mathcal{C}$ la catégorie des esp. top...",
+  "model": "gemini-3-flash-preview",
+  "provider": "google",
+  "thinking_level": "low",
+  "status": "success"
 }
 ```
 
 **Text** (LaTeX-ready):
 ```latex
 % Transcription of 119.pdf, Page 1
-% Model: gemini-2.0-flash
+% Model: gemini-3-flash-preview
 
-Soit $X$ un schéma de type fini sur un corps $k$...
+Soit $\mathcal{C}$ la catégorie des esp. top. localement sur $X$...
 ```
 
 ## Related

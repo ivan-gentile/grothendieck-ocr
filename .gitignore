@@ -8,6 +8,7 @@ venv/
 # Downloaded archives (large files - 4GB+)
 grothendieck_archives/
 grothendieck_archives*/
+data/
 
 # Output transcriptions (generated)
 output/
