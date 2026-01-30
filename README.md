@@ -14,7 +14,7 @@ This project uses multimodal LLMs (Gemini, Claude) to produce transcriptions tha
 
 ```bash
 # Clone and setup
-git clone https://github.com/ivogentile/grothendieck-ocr.git
+git clone https://github.com/ivan-gentile/grothendieck-ocr.git
 cd grothendieck-ocr
 
 # Create virtual environment

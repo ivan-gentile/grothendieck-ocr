@@ -139,6 +139,14 @@ Many `[illegible]` markers. The model was honest about its limitations—"I don'
 
 **ChatGPT 5.2** struggles with difficult handwriting and is more conservative, resulting in less complete transcriptions.
 
+### A Note on "Understanding" vs. Confabulation
+
+Something striking: the models recognize this is Grothendieck's work *without being told*. The prompt was simply "Can you extract the text from this?"—yet Gemini's output begins with "This transcription covers the handwritten notes from page 145 of Grothendieck's archives." The model inferred the author from handwriting style, mathematical content, and perhaps document structure.
+
+This cuts both ways. The same pattern-matching that enables recognition can produce confident-sounding confabulation. Some of what the models output is likely correct; some is probably hallucinated, especially for heavily crossed-out or ambiguous passages. The models don't always mark uncertainty.
+
+For transcription work, this is still enormously helpful—a human expert proofreading AI output is far faster than transcribing from scratch. But it means **every transcription needs verification**, not just spot-checking.
+
 ## Cost Analysis
 
 At roughly **$0.01 per page** with Gemini 3 Pro, transcribing all 18,000 accessible pages would cost approximately **$180**.
@@ -175,7 +183,7 @@ The plan:
 
 ## Try It Yourself
 
-The transcription code is open source: [github.com/ivogentile/grothendieck-ocr](https://github.com/ivogentile/grothendieck-ocr)
+The transcription code is open source: [github.com/ivan-gentile/grothendieck-ocr](https://github.com/ivan-gentile/grothendieck-ocr)
 
 ```bash
 pip install -r requirements.txt
